@@ -45,8 +45,8 @@ export default function Signup() {
             setIsLoading(false);
             setNewUser(newUser);
         } catch (e) {
-            if (e.name == 'UsernameExistsException') {
-                if (userHasAuthenticated == false) {
+            if (e.name === 'UsernameExistsException') {
+                if (userHasAuthenticated === false) {
                     await Auth.resendSignUp();
                     renderConfirmationForm();
                 }

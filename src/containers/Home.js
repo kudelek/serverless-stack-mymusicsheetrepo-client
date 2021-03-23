@@ -31,13 +31,13 @@ export default function Home() {
     onLoad();
   }, [isAuthenticated]);
   
-  // function loadMusicSheet() {
-  //   return API.get("mymusicsheetrepo-api", "/musicsheet");
-  // }
-
   function loadMusicSheet() {
-    return API.get("mymusicsheetrepo-api", "/invalid_path");
+    return API.get("mymusicsheetrepo-api", "/musicsheet");
   }
+
+  // function loadMusicSheet() {
+  //   return API.get("mymusicsheetrepo-api", "/invalid_path");
+  // }
 
   function renderMusicSheetList(musicSheet) {
     <>
@@ -84,6 +84,7 @@ export default function Home() {
   return (
     <div className="Home">
       {isAuthenticated ? renderMusicSheet() : renderLander()}
+      {/* { isAuthenticated.none.no } */}
     </div>
   );
 }

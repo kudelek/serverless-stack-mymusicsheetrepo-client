@@ -47,7 +47,7 @@ export default function NewMusicSheet() {
       }
       
       function createMusicSheet(musicsheet) {
-        return API.post("mymusicsheetrepo-api", "/musicsheet", {
+        return API.post("mymusicsheetrepo-api", "/mymusicsheetrepo", {
           body: musicsheet
         });
       }

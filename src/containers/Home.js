@@ -31,24 +31,24 @@ export default function Home() {
     onLoad();
   }, [isAuthenticated]);
   
-  function loadMusicSheet() {
-    return API.get("mymusicsheetrepo-api", "/musicsheet");
-  }
-
   // function loadMusicSheet() {
-  //   return API.get("mymusicsheetrepo-api", "/invalid_path");
+  //   return API.get("mymusicsheetrepo-api", "/mymusicsheetrepo");
   // }
+
+   function loadMusicSheet() {
+     return API.get("mymusicsheetrepo-api", "/mymusicsheetrepo");
+   }
 
   function renderMusicSheetList(musicSheet) {
     <>
-        <LinkContainer to="/musicsheet/new">
+        <LinkContainer to="/mymusicsheetrepo/new">
           <ListGroup.Item action className="py-3 text-nowrap text-truncate">
             <BsPencilSquare size={17} />
             <span className="ml-2 font-weight-bold">Create a new music sheet</span>
           </ListGroup.Item>
         </LinkContainer>
         {musicSheet.map(({musicsheetId, content, createdAt }) => (
-          <LinkContainer key={musicsheetId} to={'/musicsheet/${musicsheetId}'}>
+          <LinkContainer key={musicsheetId} to={'/mymusicsheetrepo/${musicsheetId}'}>
             <ListGroup.Item action>
               <span className="font-weight-bold">
                 {content.trim().split("\n")[0]}

@@ -21,7 +21,7 @@ export default function Routes() {
             <Signup />
         </Route>
 
-        <Route exact path="/musicsheet/new">
+        <Route exact path="/mymusicsheetrepo/new">
             <NewMusicSheet />
         </Route>
 

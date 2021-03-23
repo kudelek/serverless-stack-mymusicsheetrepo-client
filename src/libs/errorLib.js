@@ -1,7 +1,7 @@
 import * as Sentry from "@sentry/browser";
 import { Integrations } from "@sentry/tracing";
 
-const isLocal = process.env.NODE_ENV === "development";
+const isLocal = false; // process.env.NODE_ENV === "development";
 
 export function initSentry() {
   if (isLocal) {

@@ -8,7 +8,7 @@ import { LinkContainer } from "react-router-bootstrap";
 import { BsPencilSquare } from "react-icons/bs";
 
 export default function Home() {
-  const [musicSheet, setMusicSheet] = useState([]);
+  const [musicsheet, setMusicSheet] = useState([]);
   const { isAuthenticated } = useAppContext();
   const [isLoading, setIsLoading] = useState(true);
 
@@ -19,8 +19,8 @@ export default function Home() {
       }
   
       try {
-        const musicSheet = await loadMusicSheet();
-        setMusicSheet(musicSheet);
+        const musicsheet = await loadMusicSheet();
+        setMusicSheet(musicsheet);
       } catch (e) {
         onError(e);
       }
@@ -39,7 +39,7 @@ export default function Home() {
      return API.get("mymusicsheetrepo-api", "/mymusicsheetrepo");
    }
 
-  function renderMusicSheetList(musicSheet) {
+  function renderMusicSheetList(musicsheet) {
     <>
         <LinkContainer to="/mymusicsheetrepo/new">
           <ListGroup.Item action className="py-3 text-nowrap text-truncate">
@@ -47,7 +47,7 @@ export default function Home() {
             <span className="ml-2 font-weight-bold">Create a new music sheet</span>
           </ListGroup.Item>
         </LinkContainer>
-        {musicSheet.map(({musicsheetId, content, createdAt }) => (
+        {musicsheet.map(({musicsheetId, content, createdAt }) => (
           <LinkContainer key={musicsheetId} to={'/mymusicsheetrepo/${musicsheetId}'}>
             <ListGroup.Item action>
               <span className="font-weight-bold">
@@ -76,7 +76,7 @@ export default function Home() {
     return (
       <div className="music-sheet">
         <h2 className="pb-3 mt-4 mb-3 border-bottom">Your music sheet</h2>
-        <ListGroup>{!isLoading && renderMusicSheetList(musicSheet)}</ListGroup>
+        <ListGroup>{!isLoading && renderMusicSheetList(musicsheet)}</ListGroup>
       </div>
     );
   }

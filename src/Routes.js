@@ -5,6 +5,10 @@ import Login from "./containers/Login";
 import Signup from "./containers/Signup";
 import NotFound from "./containers/NotFound";
 import NewMusicSheet from "./containers/NewMusicSheet";
+import MusicSheet from "./containers/MusicSheet";
+import Settings from "./containers/Settings";
+import AuthenticatedRoute from "./components/AuthenticatedRoute";
+import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
 
 export default function Routes() {
   return (
@@ -13,17 +17,21 @@ export default function Routes() {
             <Home />
         </Route>
 
-        <Route exact path="/login">
+        <UnauthenticatedRoute exact path="/login">
             <Login />
-        </Route>
-
-        <Route exact path="/signup">
+        </UnauthenticatedRoute>
+        <UnauthenticatedRoute exact path="/signup">
             <Signup />
-        </Route>
-
-        <Route exact path="/mymusicsheetrepo/new">
+        </UnauthenticatedRoute>
+        <AuthenticatedRoute exact path="/settings">
+            <Settings />
+        </AuthenticatedRoute>
+        <AuthenticatedRoute exact path="/mymusicsheetrepo/new">
             <NewMusicSheet />
-        </Route>
+        </AuthenticatedRoute>
+        <AuthenticatedRoute exact path="/mymusicsheetrepo/:id">
+            <MusicSheet />
+        </AuthenticatedRoute>
 
         {/* Finally, catch all unmatched routes */}
         <Route>

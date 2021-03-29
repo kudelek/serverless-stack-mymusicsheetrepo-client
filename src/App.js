@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "react-bootstrap/Navbar";
-import "./App.css";
-import Routes from "./Routes";
-import Nav from "react-bootstrap/Nav";
-import { LinkContainer } from "react-router-bootstrap";
-import { AppContext } from "./libs/contextLib";
 import { Auth } from "aws-amplify";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 import { useHistory } from "react-router-dom";
-import { onError } from "./libs/errorLib";
+import { LinkContainer } from "react-router-bootstrap";
 import ErrorBoundary from "./components/ErrorBoundary";
+import { AppContext } from "./libs/contextLib";
+import { onError } from "./libs/errorLib";
+import Routes from "./Routes";
+import "./App.css";
 
 function App() {
   const history = useHistory();
@@ -29,7 +29,7 @@ function App() {
         onError(e);
       }
     }
-  
+
     setIsAuthenticating(false);
   }
 
@@ -48,7 +48,7 @@ function App() {
           <LinkContainer to="/">
             <Navbar.Brand className="font-weight-bold text-muted">
               My Music Sheet Repo
-            </Navbar.Brand>
+              </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle />
           <Navbar.Collapse className="justify-content-end">
@@ -73,9 +73,11 @@ function App() {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-        <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
-          <Routes />
-        </AppContext.Provider>
+        <ErrorBoundary>
+          <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>
+            <Routes />
+          </AppContext.Provider>
+        </ErrorBoundary>
       </div>
     )
   );

@@ -40,15 +40,16 @@ export default function Home() {
    }
 
   function renderMusicSheetList(musicsheet) {
-    <>
+    return (
+    <div>
         <LinkContainer to="/mymusicsheetrepo/new">
           <ListGroup.Item action className="py-3 text-nowrap text-truncate">
             <BsPencilSquare size={17} />
-            <span className="ml-2 font-weight-bold">Create a new music sheet</span>
+            <span className="ml-2 font-weight-bold">Create a new entry</span>
           </ListGroup.Item>
         </LinkContainer>
         {musicsheet.map(({musicsheetId, content, createdAt }) => (
-          <LinkContainer key={musicsheetId} to={'/mymusicsheetrepo/${musicsheetId}'}>
+          <LinkContainer key={musicsheetId} to={`/mymusicsheetrepo/${musicsheetId}`}>
             <ListGroup.Item action>
               <span className="font-weight-bold">
                 {content.trim().split("\n")[0]}
@@ -60,7 +61,7 @@ export default function Home() {
             </ListGroup.Item>
           </LinkContainer>
         ))}
-      </>
+      </div>);
   }
 
   function renderLander() {
@@ -76,7 +77,7 @@ export default function Home() {
     return (
       <div className="music-sheet">
         <h2 className="pb-3 mt-4 mb-3 border-bottom">Your music sheet</h2>
-        <ListGroup>{!isLoading && renderMusicSheetList(musicsheet)}</ListGroup>
+        <ListGroup>{renderMusicSheetList(musicsheet)}</ListGroup>
       </div>
     );
   }

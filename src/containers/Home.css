@@ -7,3 +7,28 @@
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
 }
+
+.inner {
+  overflow: hidden;
+  width: 100px;
+  background: black;
+  opacity: 50%;
+  /* background: -moz-linear-gradient(
+    right,
+    rgba(255, 255, 255, 0) 0%,
+    rgb(0, 0, 0) 80%
+  );
+  background: -webkit-linear-gradient(
+    right,
+    rgba(255, 255, 255, 0) 0%,
+    rgb(0, 0, 0) 80%
+  );
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 0) 0%,
+    rgb(0, 0, 0) 80%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); 
+  background-clip: text;
+  -webkit-text-fill-color: transparent;*/
+}

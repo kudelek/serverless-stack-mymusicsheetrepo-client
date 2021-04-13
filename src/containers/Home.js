@@ -5,7 +5,7 @@ import { onError } from "../libs/errorLib";
 import "./Home.css";
 import { API } from "aws-amplify";
 import { LinkContainer } from "react-router-bootstrap";
-import { BsPencilSquare } from "react-icons/bs";
+import { BsMusicNoteBeamed } from "react-icons/bs";
 
 export default function Home() {
   const [musicsheet, setMusicSheet] = useState([]);
@@ -44,14 +44,14 @@ export default function Home() {
     <div>
         <LinkContainer to="/mymusicsheetrepo/new">
           <ListGroup.Item action className="py-3 text-nowrap text-truncate">
-            <BsPencilSquare size={17} />
+            <BsMusicNoteBeamed size={20} />
             <span className="ml-2 font-weight-bold">Create a new entry</span>
           </ListGroup.Item>
         </LinkContainer>
         {musicsheet.map(({musicsheetId, content, createdAt }) => (
           <LinkContainer key={musicsheetId} to={`/mymusicsheetrepo/${musicsheetId}`}>
             <ListGroup.Item action>
-              <span className="font-weight-bold">
+              <span className="font-weight-bold inner">
                 {content.trim().split("\n")[0]}
               </span>
               <br />

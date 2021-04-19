@@ -6,6 +6,7 @@ import "./Home.css";
 import { API } from "aws-amplify";
 import { LinkContainer } from "react-router-bootstrap";
 import { BsMusicNoteBeamed } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [musicsheet, setMusicSheet] = useState([]);
@@ -51,13 +52,15 @@ export default function Home() {
         {musicsheet.map(({musicsheetId, content, createdAt }) => (
           <LinkContainer key={musicsheetId} to={`/mymusicsheetrepo/${musicsheetId}`}>
             <ListGroup.Item action>
-              <span className="font-weight-bold inner">
-                {content.trim().split("\n")[0]}
-              </span>
-              <br />
-              <span className="text-muted">
-                Created: {new Date(createdAt).toLocaleString()}
-              </span>
+              <div className="text-fade">
+                <span className="font-weight-bold">
+                  {content.trim().split("\n")[0]}
+                </span>
+                <br />
+                <span className="text-muted">
+                  Created: {new Date(createdAt).toLocaleString()}
+                </span>
+              </div>
             </ListGroup.Item>
           </LinkContainer>
         ))}
@@ -69,6 +72,14 @@ export default function Home() {
       <div className="lander">
         <h1>My Music Sheet Repo</h1>
         <p className="text-muted">Store and access your music sheet online!</p>
+        <div className="pt-3">
+          <Link to="/login" className="btn btn-info bin-lg mr-3">
+            Login
+          </Link>
+          <Link to="/signup" className="btn btn-success btn-md ml-3">
+            Signup
+          </Link>
+        </div>
       </div>
     );
   }
@@ -85,7 +96,6 @@ export default function Home() {
   return (
     <div className="Home">
       {isAuthenticated ? renderMusicSheet() : renderLander()}
-      {/* { isAuthenticated.none.no } */}
     </div>
   );
 }

@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 export default function Home() {
   const [musicsheet, setMusicSheet] = useState([]);
   const { isAuthenticated } = useAppContext();
-  const [isLoading, setIsLoading] = useState(true);
+  const [ isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     async function onLoad() {
@@ -20,6 +20,7 @@ export default function Home() {
       }
   
       try {
+        isLoading = true;
         const musicsheet = await loadMusicSheet();
         setMusicSheet(musicsheet);
       } catch (e) {
@@ -31,10 +32,6 @@ export default function Home() {
   
     onLoad();
   }, [isAuthenticated]);
-  
-  // function loadMusicSheet() {
-  //   return API.get("mymusicsheetrepo-api", "/mymusicsheetrepo");
-  // }
 
    function loadMusicSheet() {
      return API.get("mymusicsheetrepo-api", "/mymusicsheetrepo");

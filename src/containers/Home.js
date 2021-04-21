@@ -18,9 +18,9 @@ export default function Home() {
       if (!isAuthenticated) {
         return;
       }
+      if (!isLoading) return;
   
       try {
-        isLoading = true;
         const musicsheet = await loadMusicSheet();
         setMusicSheet(musicsheet);
       } catch (e) {

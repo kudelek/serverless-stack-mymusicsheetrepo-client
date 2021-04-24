@@ -35,9 +35,9 @@ export default function Home() {
     onLoad();
   }, [isAuthenticated]);
 
-   function loadMusicSheet() {
-     return API.get("mymusicsheetrepo-api", "/ASDASFSASADSADASDSADFS");
-   }
+  function loadNotes() {
+    return API.put("musicsheet", "/musicsheet");
+  }
 
   function renderMusicSheetList(musicsheet) {
     return (

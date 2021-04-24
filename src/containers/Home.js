@@ -35,7 +35,7 @@ export default function Home() {
     onLoad();
   }, [isAuthenticated]);
 
-  function loadMusicsheet() {
+  function loadMusicSheet() {
     return API.put("musicsheet", "/musicsheet");
   }
 

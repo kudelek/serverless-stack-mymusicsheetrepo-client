@@ -8,6 +8,10 @@
   font-weight: 600;
 }
 
+.flowinggradient {
+  background: linear-gradient(90deg, #3b3b3b, #4b4b4b);
+}
+
 .text-fade {
   overflow: hidden;
   width: 100%;
@@ -34,6 +38,7 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 /* 
 @media (prefers-color-scheme: dark) {
   body,

@@ -6,7 +6,6 @@ import Signup from "./containers/Signup";
 import NotFound from "./containers/NotFound";
 import NewMusicSheet from "./containers/NewMusicSheet";
 import MusicSheet from "./containers/MusicSheet";
-import Settings from "./containers/Settings";
 import AuthenticatedRoute from "./components/AuthenticatedRoute";
 import UnauthenticatedRoute from "./components/UnauthenticatedRoute";
 
@@ -23,9 +22,6 @@ export default function Routes() {
         <UnauthenticatedRoute exact path="/signup">
             <Signup />
         </UnauthenticatedRoute>
-        <AuthenticatedRoute exact path="/settings">
-            <Settings />
-        </AuthenticatedRoute>
         <AuthenticatedRoute exact path="/mymusicsheetrepo/new">
             <NewMusicSheet />
         </AuthenticatedRoute>

@@ -38,32 +38,32 @@ Amplify.configure({
 });
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.StrictMode> 
+    <ul className="background">
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+      <li><Eighths/></li>
+    </ul>
     <Router>
-      <ul className="background">
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-        <li><Eighths/></li>
-      </ul>
       <App />
     </Router>
   </React.StrictMode>,

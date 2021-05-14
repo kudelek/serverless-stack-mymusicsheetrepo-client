@@ -7,9 +7,20 @@ body {
   -webkit-font-smoothing: antialiased;
   font-family: "Open Sans", sans-serif;
 
-  background: linear-gradient(-45deg, #999, #bbb, #eee, #bbb, #999);
+  background: linear-gradient(
+    -45deg,
+    #999,
+    #bbb,
+    #eee,
+    #bbb,
+    #999,
+    #bbb,
+    #eee,
+    #bbb,
+    #999
+  );
   background-size: 500% 500%;
-  animation: gradient 5s linear infinite;
+  animation: gradient 15s linear infinite;
 }
 
 h1,
@@ -35,21 +46,26 @@ input[type="file"] {
     background-position: 0% 50%;
   }
   100% {
-    background-position: 100% 50%;
+    background-position: 83% 50%;
   }
 }
 
 @keyframes animate {
   0% {
-    transform: translateY(0) rotate(0deg);
+    transform: scale(0.5) translateY(0) rotate(0deg);
     opacity: 1;
     border-radius: 0;
   }
   100% {
-    transform: translateY(-1000px) rotate(720deg);
+    transform: scale(0.5) translateY(-1000px) rotate(720deg);
     opacity: 0;
     border-radius: 50%;
   }
+}
+
+.notes {
+  width: inherit;
+  height: inherit;
 }
 
 .background {

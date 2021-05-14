@@ -47,7 +47,7 @@ function App() {
       <div className="App container py-3">
         <Navbar collapseOnSelect bg="transparent" expand="md" className="mb-3">
           <LinkContainer to="/">
-            <Navbar.Brand className="font-weight-bold">
+            <Navbar.Brand className="font-weight-bold dark">
               <Logo fill="#444444"/>
               My Music Sheet Repo
               </Navbar.Brand>
@@ -61,7 +61,7 @@ function App() {
                 </>
               ) : (
                 <>
-                  <LinkContainer to="/signup">
+                  <LinkContainer style={{className: "dark"}} to="/signup">
                     <Nav.Link>Signup</Nav.Link>
                   </LinkContainer>
                   <LinkContainer to="/login">

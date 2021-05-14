@@ -32,6 +32,10 @@ h6 {
   font-family: "PT Serif", serif;
 }
 
+.dark {
+  color: #121212;
+}
+
 select.form-control,
 textarea.form-control,
 input.form-control {
@@ -54,12 +58,10 @@ input[type="file"] {
   0% {
     transform: scale(0.5) translateY(0) rotate(0deg);
     opacity: 1;
-    border-radius: 0;
   }
   100% {
     transform: scale(0.5) translateY(-1000px) rotate(720deg);
     opacity: 0;
-    border-radius: 50%;
   }
 }
 
@@ -86,8 +88,10 @@ input[type="file"] {
   display: block;
   list-style: none;
   align-content: center;
+  left: 5%;
   width: 20px;
   height: 20px;
+  bottom: -20px;
   animation: animate 28s linear infinite;
 }
 
@@ -183,7 +187,7 @@ input[type="file"] {
   animation-delay: 22s;
 }
 .background li:nth-child(13) {
-  left: 61%;
+  left: 50%;
   width: 118px;
   height: 118px;
   bottom: -118px;
@@ -197,7 +201,7 @@ input[type="file"] {
   animation-delay: 3s;
 }
 .background li:nth-child(15) {
-  left: 18%;
+  left: 60%;
   width: 134px;
   height: 134px;
   bottom: -134px;
@@ -211,14 +215,14 @@ input[type="file"] {
   animation-delay: 59s;
 }
 .background li:nth-child(17) {
-  left: 62%;
+  left: 50%;
   width: 123px;
   height: 123px;
   bottom: -123px;
   animation-delay: 39s;
 }
 .background li:nth-child(18) {
-  left: 40%;
+  left: 41%;
   width: 153px;
   height: 153px;
   bottom: -153px;

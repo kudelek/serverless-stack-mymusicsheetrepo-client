@@ -9,6 +9,7 @@ import { AppContext } from "./libs/contextLib";
 import { onError } from "./libs/errorLib";
 import Routes from "./Routes";
 import "./App.css";
+import { ReactComponent as Logo } from "./logo-new.svg";
 
 function App() {
   const history = useHistory();
@@ -47,6 +48,7 @@ function App() {
         <Navbar collapseOnSelect bg="light" expand="md" className="mb-3">
           <LinkContainer to="/">
             <Navbar.Brand className="font-weight-bold text-muted">
+              <Logo/>
               My Music Sheet Repo
               </Navbar.Brand>
           </LinkContainer>

@@ -1,6 +1,7 @@
 .Home .lander {
   padding: 80px 0;
   text-align: center;
+  background: transparent;
 }
 
 .Home .lander h1 {
@@ -34,13 +35,3 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-/* 
-@media (prefers-color-scheme: dark) {
-  body,
-  a,
-  div,
-  nav {
-    color: #eee;
-    background: #121212;
-  }
-} */

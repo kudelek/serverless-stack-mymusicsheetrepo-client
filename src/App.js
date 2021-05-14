@@ -8,8 +8,8 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { AppContext } from "./libs/contextLib";
 import { onError } from "./libs/errorLib";
 import Routes from "./Routes";
+import { ReactComponent as Logo } from "./assets/logo-new.svg";
 import "./App.css";
-import { ReactComponent as Logo } from "./logo-new.svg";
 
 function App() {
   const history = useHistory();
@@ -45,10 +45,10 @@ function App() {
   return (
     !isAuthenticating && (
       <div className="App container py-3">
-        <Navbar collapseOnSelect bg="light" expand="md" className="mb-3">
+        <Navbar collapseOnSelect bg="transparent" expand="md" className="mb-3">
           <LinkContainer to="/">
-            <Navbar.Brand className="font-weight-bold text-muted">
-              <Logo/>
+            <Navbar.Brand className="font-weight-bold">
+              <Logo fill="#444444"/>
               My Music Sheet Repo
               </Navbar.Brand>
           </LinkContainer>

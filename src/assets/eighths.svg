@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100">
+
+<style>
+    fill:'current';
+</style>
+
+<rect width="100" height="100" x="0" y="0" style="fill:none;stroke-linejoin:round;stroke-width:50"/>
+<polyline class="Stem" points="640 482 640 411" transform="translate(-608.70051 -401.13448)" style="fill:'current';stroke-linejoin:bevel;stroke-width:3;stroke:#000"/>
+<polyline class="Stem" points="685 482 685 411" transform="translate(-608.70051 -401.13448)" style="fill:'current';stroke-linejoin:bevel;stroke-width:3;stroke:#000"/>
+<path class="Beam" d="m30 4h48v12h-48v-12"/>
+<ellipse cx="102" cy="-19" rx="11" ry="16" transform="matrix(0.4387413 0.89861342 -0.91025291 0.4140527 0 0)" style="stroke-linejoin:round;stroke-width:70"/>
+<ellipse cx="83" cy="22" rx="11" ry="16" transform="matrix(0.4387413 0.89861342 -0.91025291 0.4140527 0 0)" style="stroke-linejoin:round;stroke-width:70"/>
+
+</svg>

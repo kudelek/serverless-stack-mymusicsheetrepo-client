@@ -9,6 +9,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import config from './config';
 import { Amplify } from 'aws-amplify';
 import { initSentry } from './libs/errorLib';
+import { ReactComponent as Eighths } from './assets/eighths.svg';
 
 initSentry();
 
@@ -39,6 +40,30 @@ Amplify.configure({
 ReactDOM.render(
   <React.StrictMode>
     <Router>
+      <ul className="background">
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+        <li><Eighths/></li>
+      </ul>
       <App />
     </Router>
   </React.StrictMode>,

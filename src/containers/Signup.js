@@ -111,6 +111,7 @@ export default function Signup() {
                         type="email"
                         value={fields.email}
                         onChange={handleFieldChange}
+                        placeholder="Enter email"
                     />
                 </Form.Group>
                 <Form.Group controlId="password" size="lg">
@@ -119,6 +120,7 @@ export default function Signup() {
                         type="password"
                         value={fields.password}
                         onChange={handleFieldChange}
+                        placeholder="Enter password"
                     />
                 </Form.Group>
                 <Form.Group controlId="confirmPassword" size="lg">
@@ -127,15 +129,16 @@ export default function Signup() {
                         type="password"
                         value={fields.confirmPassword}
                         onChange={handleFieldChange}
+                        placeholder="Enter password again"
                     />
                 </Form.Group>
                 <LoaderButton 
                     block
                     size="lg"
                     type="submit"
-                    variant="success"
                     isLoading={isLoading}
                     disabled={!validateForm()}
+                    variant="custom"
                 >
                     Signup
                 </LoaderButton>

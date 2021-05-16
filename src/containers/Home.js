@@ -33,7 +33,7 @@ export default function Home() {
     }
   
     onLoad();
-  }, [isAuthenticated]);
+  }, [isAuthenticated, isLoading]);
 
    function loadMusicSheet() {
      return API.get("mymusicsheetrepo-api", "/mymusicsheetrepo");
@@ -45,7 +45,7 @@ export default function Home() {
         <LinkContainer to="/mymusicsheetrepo/new">
           <ListGroup.Item action className="py-3 text-nowrap text-truncate">
             <BsMusicNoteBeamed size={20} />
-            <span className="ml-2 font-weight-bold">Create a new entry</span>
+            <span className="ml-3 py-3 font-weight-bold">Create a new entry</span>
           </ListGroup.Item>
         </LinkContainer>
         {musicsheet.map(({musicsheetId, content, createdAt }) => (
@@ -69,9 +69,9 @@ export default function Home() {
   function renderLander() {
     return (
       <div className="lander">
-        <h1>My Music Sheet Repo</h1>
-        <p className="text-muted">Store and access your music sheet online!</p>
-        <div className="pt-3">
+        <h1 className="text-uppercase">My Music Sheet Repo</h1>
+        <h5 className="dark">Store and access your music sheet online!<br/><br/>...for free!</h5>
+        <div className="pt-3 font-weight-bold">
           <Link to="/login" className="btn btn-info bin-lg mr-3">
             Login
           </Link>

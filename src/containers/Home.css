@@ -4,9 +4,10 @@
   background: transparent;
 }
 
-.Home .lander h1 {
-  font-family: "Open Sans", sans-serif;
-  font-weight: 600;
+.Home .lander h1,
+h5 {
+  font-family: "Comfortaa";
+  font-weight: 700;
 }
 
 .text-fade {

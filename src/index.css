@@ -32,10 +32,6 @@ h6 {
   font-family: "PT Serif", serif;
 }
 
-.dark {
-  color: #121212;
-}
-
 select.form-control,
 textarea.form-control,
 input.form-control {

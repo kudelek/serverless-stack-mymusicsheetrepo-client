@@ -8,3 +8,21 @@
     max-width: 320px;
   }
 }
+
+::-webkit-input-placeholder {
+  font-size: 13px !important;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-size: 13px !important;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 13px !important;
+}
+
+.form-control:focus {
+  border-color: #888888;
+  box-shadow: 0 0 0 0.1rem #888888;
+}

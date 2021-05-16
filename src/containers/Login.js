@@ -6,6 +6,7 @@ import { useAppContext } from "../libs/contextLib";
 import { useFormFields } from "../libs/hooksLib";
 import { onError } from "../libs/errorLib";
 import "./Login.css";
+import "./custom.css";
 
 export default function Login() {
   const { userHasAuthenticated } = useAppContext();
@@ -37,12 +38,13 @@ export default function Login() {
     <div className="Login">
       <Form onSubmit={handleSubmit}>
         <Form.Group size="lg" controlId="email">
-          <Form.Label>Email</Form.Label>
+          <Form.Label>Email address</Form.Label>
           <Form.Control
             autoFocus
             type="email"
             value={fields.email}
             onChange={handleFieldChange}
+            placeholder="Enter email"
           />
         </Form.Group>
         <Form.Group size="lg" controlId="password">
@@ -51,6 +53,7 @@ export default function Login() {
             type="password"
             value={fields.password}
             onChange={handleFieldChange}
+            placeholder="Enter password"
           />
         </Form.Group>
         <LoaderButton
@@ -59,6 +62,7 @@ export default function Login() {
           type="submit"
           isLoading={isLoading}
           disabled={!validateForm()}
+          variant="custom"
         >
           Login
         </LoaderButton>

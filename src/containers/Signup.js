@@ -91,7 +91,7 @@ export default function Signup() {
                     block
                     size="lg"
                     type="submit"
-                    variant="success"
+                    variant="custom-success"
                     isLoading={isLoading}
                     disabled={!validateConfirmationForm()}
                 >
@@ -138,7 +138,7 @@ export default function Signup() {
                     type="submit"
                     isLoading={isLoading}
                     disabled={!validateForm()}
-                    variant="custom"
+                    variant="custom-success"
                 >
                     Signup
                 </LoaderButton>

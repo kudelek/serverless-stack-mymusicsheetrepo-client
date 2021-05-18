@@ -1,5 +1,9 @@
 .btn-custom,
-.btn-custom:disabled:hover {
+.btn-custom:disabled:hover,
+.btn-custom-success:disabled,
+.btn-custom-success:disabled:hover,
+.btn-custom-del:disabled,
+.btn-custom-del:disabled:hover {
   color: #444444 !important;
   background-color: #c0c0c0 !important;
   border-color: #888888 !important;
@@ -9,5 +13,31 @@
 .btn-custom:active {
   color: #eeeeee !important;
   background-color: #adadad !important;
+  border-color: #555555 !important;
+}
+
+.btn-custom-success {
+  color: #444444 !important;
+  background-color: #86a797 !important;
+  border-color: #888888 !important;
+}
+
+.btn-custom-success:hover,
+.btn-custom-success:active {
+  color: #eeeeee !important;
+  background-color: #769485 !important;
+  border-color: #555555 !important;
+}
+
+.btn-custom-del {
+  color: #444444 !important;
+  background-color: #a78686 !important;
+  border-color: #888888 !important;
+}
+
+.btn-custom-del:hover,
+.btn-custom-del:active {
+  color: #eeeeee !important;
+  background-color: #947676 !important;
   border-color: #555555 !important;
 }

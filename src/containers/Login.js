@@ -62,7 +62,7 @@ export default function Login() {
           type="submit"
           isLoading={isLoading}
           disabled={!validateForm()}
-          variant="custom"
+          variant="custom-success"
         >
           Login
         </LoaderButton>

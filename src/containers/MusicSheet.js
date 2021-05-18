@@ -148,6 +148,7 @@ export default function MusicSheet() {
             block
             size="lg"
             type="submit"
+            variant="custom"
             isLoading={isLoading}
             disabled={!validateForm()}
           >
@@ -156,7 +157,7 @@ export default function MusicSheet() {
           <LoaderButton
             block
             size="lg"
-            variant="danger"
+            variant="custom-del"
             onClick={handleDelete}
             isLoading={isDeleting}
           >

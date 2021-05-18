@@ -59,6 +59,7 @@ export default function NewMusicSheet() {
                     <Form.Control
                         value={content}
                         as="textarea"
+                        placeholder="Type your note"
                         onChange={(e) => setContent(e.target.value)}
                     />
                 </Form.Group>
@@ -70,7 +71,7 @@ export default function NewMusicSheet() {
                     block
                     type="submit"
                     size="lg"
-                    variant="primary"
+                    variant="custom"
                     isLoading={isLoading}
                     disabled={!validateForm()}
                 >

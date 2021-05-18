@@ -10,6 +10,11 @@ h5 {
   font-weight: 700;
 }
 
+h5,
+h5:hover {
+  color: #444444;
+}
+
 .text-fade {
   overflow: hidden;
   width: 100%;

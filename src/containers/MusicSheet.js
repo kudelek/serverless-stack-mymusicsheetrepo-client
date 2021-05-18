@@ -1,5 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 import { API, Storage } from "aws-amplify";
 import { useParams, useHistory } from "react-router-dom";
 import LoaderButton from "../components/LoaderButton";
@@ -16,6 +18,10 @@ export default function MusicSheet() {
   const [content, setContent] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
 
   useEffect(() => {
     function loadMusicSheet() {
@@ -66,11 +72,8 @@ export default function MusicSheet() {
     event.preventDefault();
   
     if (file.current && file.current.size > config.MAX_ATTACHMENT_SIZE) {
-      alert(
-        `Please pick a file smaller than ${
-          config.MAX_ATTACHMENT_SIZE / 1000000
-        } MB.`
-      );
+      setShow(true);
+      if (show == false)
       return;
     }
   
@@ -118,6 +121,20 @@ export default function MusicSheet() {
     }
   }
 
+  function ModalExceededFileSize(props) {
+    return (
+    <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
+      <Modal.Header closeButton>
+        <Modal.Title>Warning</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>Exceeded maximum file size: {config.MAX_ATTACHMENT_SIZE/1000000}MB</Modal.Body>
+      <Modal.Footer>
+        <Button variant="custom" onClick={handleClose}>Understood</Button>
+      </Modal.Footer>
+    </Modal>
+    )
+  }
+
   return (
     <div className="MusicSheet">
       {musicsheet && (
@@ -163,6 +180,8 @@ export default function MusicSheet() {
           >
             Delete
           </LoaderButton>
+
+              <ModalExceededFileSize show={show} onHide={handleClose}/>
         </Form>
       )}
     </div>

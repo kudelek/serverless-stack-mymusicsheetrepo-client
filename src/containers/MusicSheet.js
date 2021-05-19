@@ -18,10 +18,15 @@ export default function MusicSheet() {
   const [content, setContent] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [show, setShow] = useState(false);
+  const [showModalFile, setShowModalFile] = useState(false);
+  const [showModalDelete, setShowModalDelete] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleCloseModalFile = () => setShowModalFile(false);
+  // eslint-disable-next-line no-unused-vars
+  const handleShowModalFile = () => setShowModalFile(true);
+  const handleCloseModalDelete = () => setShowModalDelete(false);
+  // eslint-disable-next-line no-unused-vars
+  const handleShowModalDelete = () => setShowModalDelete(true);
 
   useEffect(() => {
     function loadMusicSheet() {
@@ -72,8 +77,8 @@ export default function MusicSheet() {
     event.preventDefault();
   
     if (file.current && file.current.size > config.MAX_ATTACHMENT_SIZE) {
-      setShow(true);
-      if (show == false)
+      setShowModalFile(true);
+      if (showModalFile === false)
       return;
     }
   
@@ -99,29 +104,29 @@ export default function MusicSheet() {
     return API.del("mymusicsheetrepo-api", `/mymusicsheetrepo/${id}`);
   }
   
-  async function handleDelete(event) {
-    event.preventDefault();
-  
-    const confirmed = window.confirm(
-      "Are you sure you want to delete this entry?"
-    );
-  
-    if (!confirmed) {
+  function handleModalDelete() {
+    setShowModalDelete(true);
+    if (!showModalDelete)
       return;
-    }
+    handleDelete();
+  }
+
+  async function handleDelete() {
   
     setIsDeleting(true);
   
     try {
+      setShowModalDelete(false);
       await deleteMusicSheet();
       history.push("/");
     } catch (e) {
       onError(e);
       setIsDeleting(false);
     }
+
   }
 
-  function ModalExceededFileSize(props) {
+  function ModalFile(props) {
     return (
     <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
       <Modal.Header closeButton>
@@ -129,9 +134,24 @@ export default function MusicSheet() {
       </Modal.Header>
       <Modal.Body>Exceeded maximum file size: {config.MAX_ATTACHMENT_SIZE/1000000}MB</Modal.Body>
       <Modal.Footer>
-        <Button variant="custom" onClick={handleClose}>Understood</Button>
+        <Button variant="custom" onClick={handleCloseModalFile}>Understood</Button>
       </Modal.Footer>
     </Modal>
+    )
+  }
+
+  function ModalDelete(props) {
+    return (
+      <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
+        <Modal.Header closeButton>
+          <Modal.Title>Warning</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Are you sure you want to delete this entry?</Modal.Body>
+        <Modal.Footer>
+          <Button variant="custom-del" onClick={handleModalDelete}>Yes</Button>
+          <Button variant="custom" onClick={handleCloseModalDelete}>No</Button>
+        </Modal.Footer>
+      </Modal>
     )
   }
 
@@ -175,13 +195,14 @@ export default function MusicSheet() {
             block
             size="lg"
             variant="custom-del"
-            onClick={handleDelete}
+            onClick={handleModalDelete}
             isLoading={isDeleting}
           >
             Delete
           </LoaderButton>
 
-              <ModalExceededFileSize show={show} onHide={handleClose}/>
+              <ModalFile show={showModalFile} onHide={handleCloseModalFile}/>
+              <ModalDelete show={showModalDelete} onHide={handleCloseModalDelete}/>
         </Form>
       )}
     </div>

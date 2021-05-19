@@ -36,7 +36,7 @@ const prod = {
 
 const config = {
   // Add  common config values here
-  MAX_ATTACHMENT_SIZE: 5000000,
+  MAX_ATTACHMENT_SIZE: 10000000,
   // Default to dev if not set
   ...(process.env.REACT_APP_STAGE === "prod" ? prod : dev),
 };

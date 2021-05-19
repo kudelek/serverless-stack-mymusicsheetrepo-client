@@ -2,3 +2,19 @@
   height: 300px;
   font-size: 1.5rem;
 }
+
+::-webkit-input-placeholder {
+  font-size: 15px !important;
+  padding-top: 10px;
+}
+
+:-moz-placeholder {
+  /* Firefox 18- */
+  font-size: 15px !important;
+  padding-top: 10px;
+}
+::-moz-placeholder {
+  /* Firefox 19+ */
+  font-size: 15px !important;
+  padding-top: 10px;
+}

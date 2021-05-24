@@ -1,11 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
-
 .App {
   background: transparent;
-}
-
-body {
-  font-family: "Comfortaa";
+  width: 100vw;
+  height: 100vh;
 }
 
 .dark {
@@ -16,4 +12,16 @@ body {
 .dark:hover {
   color: #dddddd !important;
   border: black 1px !important;
+}
+
+@media screen and (max-width: 600px) {
+  .brand-mobile {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .brand-desktop {
+    display: none;
+  }
 }

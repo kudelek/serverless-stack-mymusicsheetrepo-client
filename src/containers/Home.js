@@ -35,9 +35,9 @@ export default function Home() {
     onLoad();
   }, [isAuthenticated, isLoading]);
 
-   function loadMusicSheet() {
-     return API.get("mymusicsheetrepo-api", "/mymusicsheetrepo");
-   }
+  function loadMusicSheet() {
+    return API.get("mymusicsheetrepo-api", "/mymusicsheetrepo");
+  }
 
   function renderMusicSheetList(musicsheet) {
     return (
@@ -85,8 +85,8 @@ export default function Home() {
 
   function renderMusicSheet() {
     return (
-      <div className="music-sheet">
-        <h2 className="pb-3 mt-4 mb-3 border-bottom">Your music sheet</h2>
+      <div>
+        <h2 className="pb-3 mt-4 mb-3 text-center music-sheet">Your music sheet</h2>
         <ListGroup>{renderMusicSheetList(musicsheet)}</ListGroup>
       </div>
     );

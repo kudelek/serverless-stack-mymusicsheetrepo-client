@@ -45,16 +45,21 @@ function App() {
   return (
     !isAuthenticating && (
       <div className="App container py-3">
-        <Navbar collapseOnSelect bg="transparent" expand="md" className="mb-3">
+        <Navbar bg="transparent" className="mb-3 d-flex">
           <LinkContainer to="/">
-            <Navbar.Brand className="font-weight-bold text-dark text-uppercase">
-              <Logo fill="#444444"/>
-              My Music Sheet Repo
+              <Navbar.Brand className="font-weight-bold text-dark text-uppercase brand-mobile">
+                <Logo fill="#444444"/>
+                My Music Sheet Repo
+              </Navbar.Brand>
+          </LinkContainer>
+          <LinkContainer to="/">
+          <Navbar.Brand className="font-weight-bold text-dark text-uppercase brand-desktop">
+                <Logo fill="#444444"/>
+                MMSR
               </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle />
-          <Navbar.Collapse className="justify-content-end">
-            <Nav activeKey={window.location.pathname}>
+            <Nav activeKey={window.location.pathname} className="d-flex justify-content-end w-100 mobile">
               {isAuthenticated ? (
                 <>
                   <Nav.Link onClick={handleLogout}>Logout</Nav.Link>
@@ -70,7 +75,6 @@ function App() {
                 </>
               )}
             </Nav>
-          </Navbar.Collapse>
         </Navbar>
         <ErrorBoundary>
           <AppContext.Provider value={{ isAuthenticated, userHasAuthenticated }}>

@@ -1,17 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
+
 body {
   margin: 0;
   padding: 0;
+  padding-bottom: 2%;
   color: #333;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Comfortaa";
+}
 
+.bg {
   background: linear-gradient(#999, #bbb, #eee, #eee, #bbb, #999, #999, #bbb);
-  background-size: 100% 700%;
-  animation: gradient 10s linear infinite;
   height: 100vh;
   width: 100vw;
+  background-size: 100% 700%;
+  z-index: -999;
+  animation: gradient 10s linear infinite;
+  position: fixed;
 }
 
 h1,
@@ -58,20 +65,25 @@ input[type="file"] {
 }
 
 .background {
-  position: fixed;
-  pointer-events: none;
-  z-index: -1000;
   width: 100vw;
   height: 100vh;
-  top: 0;
-  left: 0;
   margin: 0;
   padding: 0;
+  left: 0;
+  top: 0;
+  z-index: -1000;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  pointer-events: none;
   overflow: hidden;
+  position: fixed;
 }
+
 .background li {
   pointer-events: none;
-  position: absolute;
+  position: fixed;
   display: block;
   list-style: none;
   align-content: center;

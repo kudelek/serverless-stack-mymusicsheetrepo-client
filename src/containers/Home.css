@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
+
 .Home .lander {
   padding: 80px 0;
   text-align: center;
@@ -6,13 +8,16 @@
 
 .Home .lander h1,
 h5 {
-  font-family: "Comfortaa";
   font-weight: 700;
 }
 
 h5,
 h5:hover {
   color: #444444;
+}
+
+.Home {
+  padding-bottom: 5%;
 }
 
 .text-fade {
@@ -40,4 +45,9 @@ h5:hover {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#1b1b1b",endColorstr="#1b1b1b",GradientType);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.music-sheet {
+  padding-bottom: 15px !important;
+  font-family: "Comfortaa" !important;
 }

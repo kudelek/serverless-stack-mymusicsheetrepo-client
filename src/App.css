@@ -14,13 +14,17 @@
   border: black 1px !important;
 }
 
-@media screen and (max-width: 600px) {
+.brand-mobile {
+  font-size: 30px;
+}
+
+@media screen and (min-width: 600px) {
   .brand-mobile {
     display: none;
   }
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (max-width: 601px) {
   .brand-desktop {
     display: none;
   }

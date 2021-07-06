@@ -56,6 +56,7 @@ export default function Login() {
             placeholder="Enter password"
           />
         </Form.Group>
+        <div className="d-flex justify-content-center">
         <LoaderButton
           block
           size="lg"
@@ -66,6 +67,7 @@ export default function Login() {
         >
           Login
         </LoaderButton>
+        </div>
       </Form>
     </div>
   );

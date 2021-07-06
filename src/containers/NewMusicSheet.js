@@ -79,6 +79,7 @@ export default function NewMusicSheet() {
                         value={content}
                         as="textarea"
                         placeholder="Type your note"
+                        style={{background:"rgba(230,230,230,0.8)"}}
                         onChange={(e) => setContent(e.target.value)}
                     />
                 </Form.Group>
@@ -86,16 +87,18 @@ export default function NewMusicSheet() {
                     <Form.Label>Attachment</Form.Label>
                     <Form.Control onChange={handleFileChange} type="file" />
                 </Form.Group>
-                <LoaderButton
-                    block
-                    type="submit"
-                    size="lg"
-                    variant="custom"
-                    isLoading={isLoading}
-                    disabled={!validateForm()}
-                >
-                    Create
-                </LoaderButton>
+                <div className="d-flex justify-content-center">
+                    <LoaderButton
+                        block
+                        type="submit"
+                        size="lg"
+                        variant="custom-success"
+                        isLoading={isLoading}
+                        disabled={!validateForm()}
+                    >
+                        Create
+                    </LoaderButton>
+                </div>
                 <ModalFile show={showModalFile} onHide={handleCloseModalFile}/>
             </Form>
         </div>

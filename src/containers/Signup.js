@@ -7,6 +7,7 @@ import { useFormFields } from "../libs/hooksLib";
 import { onError } from "../libs/errorLib";
 import "./Signup.css";
 import { Auth } from "aws-amplify";
+import Modal from "react-bootstrap/esm/Modal";
 
 export default function Signup() {
     const [fields, handleFieldChange] = useFormFields({
@@ -16,9 +17,12 @@ export default function Signup() {
         confirmationCode:"",
     });
     const history = useHistory();
-    const [newUser, setNewUser] = useState(null);
     const { userHasAuthenticated } = useAppContext();
+    const [newUser, setNewUser] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
+    const [showModalResend, setShowModalResend] = useState(false);
+
+    const handleCloseModalResend = () => setShowModalResend(false);
 
     function validateForm() {
         return (
@@ -74,6 +78,29 @@ export default function Signup() {
         }
     }
 
+    async function handleResendConfirmationCode() {
+        try {
+            await Auth.resendSignUp(fields.email);
+            console.log('code resent successfully');
+            setShowModalResend(true);
+        } catch (err) {
+            console.log('error resending code: ', err);
+        }
+    }
+
+    function ModalResend(props) {
+        return (
+            <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered>
+                <Modal.Header closeButton>
+                    <Modal.Title>Info</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Code resent successfully</Modal.Body>
+                
+            </Modal>
+        )
+
+    }
+
     function renderConfirmationForm() {
         return (
             <Form onSubmit={handleConfirmationSubmit}>
@@ -87,16 +114,27 @@ export default function Signup() {
                     />
                     <Form.Text muted>Please check your email for the code.</Form.Text>
                 </Form.Group>
-                <LoaderButton
-                    block
-                    size="lg"
-                    type="submit"
-                    variant="custom-success"
-                    isLoading={isLoading}
-                    disabled={!validateConfirmationForm()}
-                >
-                    Verify
-                </LoaderButton>
+                <div className="d-flex justify-content-around">
+                    <LoaderButton 
+                        block
+                        size="lg"
+                        onChange={handleResendConfirmationCode()}
+                        variant="custom"
+                        isLoading={isLoading}
+                        >
+                        Resend
+                    </LoaderButton>
+                    <LoaderButton
+                        block
+                        size="lg"
+                        type="submit"
+                        variant="custom-success"
+                        isLoading={isLoading}
+                        disabled={!validateConfirmationForm()}
+                        >
+                        Verify
+                    </LoaderButton>
+                </div>
             </Form>
         );
     }
@@ -132,19 +170,23 @@ export default function Signup() {
                         placeholder="Enter password again"
                     />
                 </Form.Group>
-                <LoaderButton 
-                    block
-                    size="lg"
-                    type="submit"
-                    isLoading={isLoading}
-                    disabled={!validateForm()}
-                    variant="custom-success"
-                >
-                    Signup
-                </LoaderButton>
+                <div className="d-flex justify-content-center">
+                    <LoaderButton 
+                        block
+                        size="lg"
+                        type="submit"
+                        isLoading={isLoading}
+                        disabled={!validateForm()}
+                        variant="custom-success"
+                    >
+                        Signup
+                    </LoaderButton>
+                </div>
             </Form>
         );
     }
+
+    <ModalResend show={showModalResend} onHide={handleCloseModalResend}/>
 
     return (
         <div className="Signup">

@@ -39,7 +39,7 @@ Amplify.configure({
 
 ReactDOM.render(
   <React.StrictMode>
-    <div className="bg">
+    <div>
       <ul className="background">
         <li><Eighths/></li>
         <li><Eighths/></li>
@@ -64,10 +64,10 @@ ReactDOM.render(
         <li><Eighths/></li>
         <li><Eighths/></li>
       </ul>
-      </div>
-      <Router>
-        <App />
-      </Router>
+    </div>
+    <Router>
+      <App />
+    </Router>
     
   </React.StrictMode>
    ,

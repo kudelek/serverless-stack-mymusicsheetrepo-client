@@ -47,13 +47,13 @@ function App() {
       <div className="App container py-3">
         <Navbar bg="transparent" className="mb-3 d-flex">
           <LinkContainer to="/">
-              <Navbar.Brand className="font-weight-bold text-dark text-uppercase brand-mobile">
+              <Navbar.Brand className="font-weight-bold text-dark text-uppercase brand-desktop">
                 <Logo fill="#444444"/>
                 My Music Sheet Repo
               </Navbar.Brand>
           </LinkContainer>
           <LinkContainer to="/">
-          <Navbar.Brand className="font-weight-bold text-dark text-uppercase brand-desktop">
+          <Navbar.Brand className="font-weight-bold text-dark text-uppercase brand-mobile dark">
                 <Logo fill="#444444"/>
                 MMSR
               </Navbar.Brand>

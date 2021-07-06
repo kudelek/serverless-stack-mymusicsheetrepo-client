@@ -72,7 +72,7 @@ export default function Home() {
         <h1 className="text-uppercase">My Music Sheet Repo</h1>
         <h5>Store and access your music sheet online!<br/><br/>...for free!</h5>
         <div className="pt-3 font-weight-bold">
-          <Link to="/login" className="btn btn-custom bin-lg mr-3">
+          <Link to="/login" className="btn btn-custom-success bin-lg mr-3">
             Login
           </Link>
           <Link to="/signup" className="btn btn-custom btn-md ml-3">

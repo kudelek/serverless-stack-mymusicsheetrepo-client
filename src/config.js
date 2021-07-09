@@ -1,7 +1,7 @@
 const dev = {
   s3: {
     REGION: "us-east-1",
-    BUCKET: "mymusicsheetrepo-app-upload"
+    BUCKET: "dev-mymusicsheetrepo-infra-s3-uploads4f6eb0fd-sbvq6xfgi1xh"
   },
   apiGateway: {
     REGION: "us-east-1",
@@ -18,7 +18,7 @@ const dev = {
 const prod = {
   s3: {
     REGION: "us-east-1",
-    BUCKET: "mymusicsheetrepo-app-upload"
+    BUCKET: "prod-mymusicsheetrepo-infra-s3-uploads4f6eb0fd-1qw3ujobnuijh"
   },
   apiGateway: {
     REGION: "us-east-1",

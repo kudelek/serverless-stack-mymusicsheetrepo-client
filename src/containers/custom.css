@@ -7,8 +7,8 @@
   color: #444444 !important;
   background-color: #c0c0c0 !important;
   border-color: #888888 !important;
-  max-width: 35%;
-  min-width: 25%;
+  max-width: 20%;
+  min-width: 100px;
 }
 
 .btn-custom:hover,
@@ -22,8 +22,8 @@
   color: #444444 !important;
   background-color: #86a797 !important;
   border-color: #888888 !important;
-  max-width: 35%;
-  min-width: 25%;
+  max-width: 20%;
+  min-width: 100px;
 }
 
 .btn-custom-success:hover,
@@ -37,8 +37,8 @@
   color: #444444 !important;
   background-color: #a78686 !important;
   border-color: #888888 !important;
-  max-width: 35%;
-  min-width: 25%;
+  max-width: 20%;
+  min-width: 100px;
 }
 
 .btn-custom-del:hover,

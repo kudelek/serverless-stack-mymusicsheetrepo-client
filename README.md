@@ -3,7 +3,7 @@
 A simple serverless single-page application
 
 demo:
-mymusicsheetrepo.com
+https://mymusicsheetrepo.com
 
 Created with React.js and AWS
 

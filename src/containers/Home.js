@@ -86,7 +86,7 @@ export default function Home() {
   function renderMusicSheet() {
     return (
       <div>
-        <h2 className="pb-3 mt-4 mb-3 text-center music-sheet">Your music sheet</h2>
+        <h2 className="pb-3 mt-4 mb-3 text-center music-sheet">Your   music   sheet</h2>
         <ListGroup>{renderMusicSheetList(musicsheet)}</ListGroup>
       </div>
     );

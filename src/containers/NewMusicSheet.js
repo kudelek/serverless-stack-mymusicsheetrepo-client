@@ -18,8 +18,6 @@ export default function NewMusicSheet() {
     const [showModalFile, setShowModalFile] = useState(false);
     
     const handleCloseModalFile = () => setShowModalFile(false);
-    // eslint-disable-next-line no-unused-vars
-    const handleShowModalFile = () => setShowModalFile(true);
 
     function validateForm() {
         return content.length > 0;

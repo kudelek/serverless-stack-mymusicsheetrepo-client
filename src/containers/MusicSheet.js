@@ -22,11 +22,7 @@ export default function MusicSheet() {
   const [showModalDelete, setShowModalDelete] = useState(false);
 
   const handleCloseModalFile = () => setShowModalFile(false);
-  // eslint-disable-next-line no-unused-vars
-  const handleShowModalFile = () => setShowModalFile(true);
   const handleCloseModalDelete = () => setShowModalDelete(false);
-  // eslint-disable-next-line no-unused-vars
-  const handleShowModalDelete = () => setShowModalDelete(true);
 
   useEffect(() => {
     function loadMusicSheet() {
@@ -35,15 +31,15 @@ export default function MusicSheet() {
 
     async function onLoad() {
       try {
-        const musicsheet = await loadMusicSheet();
-        const { content, attachment } = musicsheet;
+        const musicsheetData = await loadMusicSheet();
+        const { contentData, attachment } = musicsheetData;
 
         if (attachment) {
-            musicsheet.attachmentURL = await Storage.vault.get(attachment);
+            musicsheetData.attachmentURL = await Storage.vault.get(attachment);
         }
 
-        setContent(content);
-        setMusicSheet(musicsheet);
+        setContent(contentData);
+        setMusicSheet(musicsheetData);
       } catch (e) {
         onError(e);
       }
@@ -64,9 +60,9 @@ export default function MusicSheet() {
     file.current = event.target.files[0];
   }
   
-  function saveMusicSheet(musicsheet) {
+  function saveMusicSheet(musicsheetToSave) {
     return API.put("mymusicsheetrepo-api", `/mymusicsheetrepo/${id}`, {
-      body: musicsheet
+      body: musicsheetToSave
     });
   }
   
@@ -79,7 +75,7 @@ export default function MusicSheet() {
     if (file.current && file.current.size > config.MAX_ATTACHMENT_SIZE) {
       setShowModalFile(true);
       if (showModalFile === false)
-      return;
+        return;
     }
   
     setIsLoading(true);

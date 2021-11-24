@@ -16,7 +16,7 @@ command = "REACT_APP_STAGE=prod CI=false npm run build"
 # Deploy Preview context: All Deploy Previews
 # will inherit these settings.
 [context.deploy-preview]
-command = "REACT_APP STAGE=dev npm run build"
+command = "REACT_APP_STAGE=dev CI=false npm run build"
 
 # Branch Deploy context: All deploys that are not in
 # an active Deploy Preview will inherit these settings.

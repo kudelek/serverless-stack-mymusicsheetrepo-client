@@ -23,8 +23,8 @@ export default function Home() {
       }
   
       try {
-        const musicsheet = await loadMusicSheet();
-        setMusicSheet(musicsheet);
+        const musicsheetData = await loadMusicSheet();
+        setMusicSheet(musicsheetData);
       } catch (e) {
         onError(e);
       }
@@ -39,7 +39,7 @@ export default function Home() {
     return API.get("mymusicsheetrepo-api", "/mymusicsheetrepo");
   }
 
-  function renderMusicSheetList(musicsheet) {
+  function renderMusicSheetList(musicsheetList) {
     return (
     <div>
         <LinkContainer to="/mymusicsheetrepo/new">
@@ -48,7 +48,7 @@ export default function Home() {
             <span className="ml-3 py-3 font-weight-bold">Create a new entry</span>
           </ListGroup.Item>
         </LinkContainer>
-        {musicsheet.map(({musicsheetId, content, createdAt }) => (
+        {musicsheetList.map(({musicsheetId, content, createdAt }) => (
           <LinkContainer key={musicsheetId} to={`/mymusicsheetrepo/${musicsheetId}`}>
             <ListGroup.Item action>
               <div className="text-fade">

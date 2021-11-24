@@ -42,12 +42,12 @@ export default function Signup() {
         setIsLoading(true);
 
         try {
-            const newUser = await Auth.signUp({
+            const newUserDetails = await Auth.signUp({
                 username: fields.email,
                 password: fields.password,
             });
             setIsLoading(false);
-            setNewUser(newUser);
+            setNewUser(newUserDetails);
         } catch (e) {
             if (e.name === 'UsernameExistsException') {
                 if (userHasAuthenticated === false) {
